@@ -41,12 +41,3 @@ make
 cp start-stop-daemon /usr/bin/start-stop-daemon
 
 echo "Installed start-stop-daemon at /usr/bin/start-stop-daemon."
-
-if [[ ${#install_pkgs[@]} -ne 0 ]]; then
-	echo "The following packages were installed: ${install_pkgs[@]}"
-	read -n 1 -p "Remove [y/N]?" choice
-	if [[ $choice == y ]]; then
-		yum remove ${install_pkgs[@]} -y
-		echo
-	fi
-fi
